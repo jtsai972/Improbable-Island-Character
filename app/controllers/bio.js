@@ -4,11 +4,11 @@ var dk01 = require("../models/dk001")
 module.exports = function(app) {
   // * HANDLING GET REQUEST: return all burgers in the db
   app.get("/", function(req, res) {
-    res.render("index");
+    res.render("index", {title: "Home", dk: [dk01]});
   });
 
   app.get("/dk-01", function(req, res) {
-    res.render("biography", dk01)
+    res.render("biography", {title: "Home", dks: 1, dk: [dk01]})
   })
   
   // // * HANDLING POST REQUEST: 

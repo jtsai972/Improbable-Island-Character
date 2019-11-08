@@ -1,3 +1,25 @@
+<header>
+
+</header>
+
 <h1>Character Ephemeral</h1>
 <h2>Drive Kills</h2>
+<section>
 <p><a href="/dk-01/">Drive Kill 01</a></p>
+</section>
+<h2>Quick References</h2>
+<section>
+  {{#each dk}}
+    <div class="ref">
+      <p><strong>Name:</strong> {{name}}</p>
+      <p><strong>Nicknames:</strong> {{nick}}</p>
+      <p><strong>Age:</strong> {{age}}</p>
+      <p><strong>Gender:</strong> {{gender}}</p>
+      <p><strong>Race: </strong> {{race}}</p>
+      <p><strong>Height: </strong> {{height}}</p>
+      <p><strong>Hair: </strong> {{hair}}</p>
+      <p><strong>Eye Color: </strong> {{eye}}</p>
+      <p><strong>Skin color: </strong> {{skin}}</p>
+    </div>
+  {{/each}}
+</section>

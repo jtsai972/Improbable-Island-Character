@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+  transition-duration: 0.5s;
+  transition-property: opacity, width;
+  transition-timing-function: ease;
+}
+body {
+  
+}

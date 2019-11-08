@@ -1,14 +1,14 @@
-// const static = require("./static");
+const base = require("./base");
 
 module.exports = {
   dk: 1,
-  name: "Ephemeral",
-  nick: ["Ephie", "Effie", "Effy"].join(", "),
-  age: "Appears to be in her 20s",
-  gender: "Female",
+  name: base.name,
+  nick: base.nick,
+  age: base.age,
+  gender: base.gender,
   race: "Human",
   height: "5'10\"",
-  hair: "Her dark blonde hair falls in a braid down her back",
+  hair: base.hairColor + "falls in a braid down her back",
   eye: "Amber",
   skin: "Pale"
 }

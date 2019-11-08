@@ -5,6 +5,18 @@ const routes = require("./app/controllers/bio");
 const path = require("path");
 // var db = require("./app/models/")
 
+/**
+ * const hbs = exphbs.create({
+    extname      :'hbs',
+    layoutsDir   : 'path/to/layout/directory',
+    defaultLayout: 'main',
+    helpers      : 'path/to/helpers/directory',
+    partialsDir  : [
+        'path/to/partials/directory'
+    ]
+});
+ */
+
 /* ----------------------------------------------
  * SET UP App
  * ---------------------------------------------- */
@@ -12,6 +24,15 @@ var PORT = process.env.PORT || 8080;
 
 // * App creation
 var app = express();
+
+var hbs = exphbs.create({ 
+  /* config */ 
+  extname      :'handlebars',
+  layoutsDir   : './app/views/layouts',
+  defaultLayout: 'main',
+  //helpers      : 'path/to/helpers/directory',
+  partialsDir  : [ './app/views/partials']
+});
 
 // * Serving public files
 app.use(express.static(  path.join(__dirname, '/app/public') ));
@@ -27,7 +48,7 @@ routes(app);
  * SET UP Handlebars
  * ---------------------------------------------- */
 // * Adding handlebars to the app
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", hbs.engine);
 app.set('views', path.join(__dirname, '/app/views'));
 app.set("view engine", "handlebars");
 
